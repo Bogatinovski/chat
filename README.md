@@ -1,4 +1,4 @@
-# chat
+# Chat
 VIDEO-AUDIO CONFERENCE WEB APP
 
 Web app that allows users to chat and have audio/video call. The users can create an account, log in and communicate with other users in a real-time manner. For the web app’s backend I used PHP and I used MySQL database to store the info about the users and their messages
