@@ -1,0 +1,135 @@
+#user_bar{
+	width:100%;
+	height: 55px;
+	background: rgba(60, 70,100, 0.8);
+	font-size: 0.9em;
+	padding: 1px 5px;
+}
+#loginForm{
+	float:right;
+	display: inline-block;
+}
+#loginForm td{
+	font-size: 0.9em;
+	font-weight: bold;
+	padding: 2px;
+}
+#login{
+	position: relative;
+	padding: 2px 5px;
+	display: block;
+	width: 100px;
+	margin: auto auto 1% auto;
+}
+#message_bar{
+	color: white;
+	font-style: italic;
+	font-size: 0.95em;
+	text-shadow:1px 1px 1px black;
+}
+#user_status{
+	color:white;
+	font-size: 0.85em;
+	padding: 2px 10px;
+}
+#logout{
+	cursor: pointer;
+}
+#logoutForm{
+	display: inline-block;
+	float:right;
+	margin: auto 50px auto auto;
+}
+#logout:hover{
+	text-decoration: underline;
+}
+.errors{
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+.button {
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #357ebd;
+	display:inline-block;
+	color:white;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:1% 2%;
+	user-select:none;
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	-ms-user-select:none;
+	cursor: pointer;
+	background-color:rgb(210, 50, 45);
+	border-color: white;
+}.button:hover {
+	background-color:rgba(210, 50, 45, 0.8);
+}.button:active {
+	position:relative;
+	top:1px;
+}
+.barImg{
+	width: 50px;
+	height: auto;
+	overflow: hidden;
+	float: left;
+	margin: auto 5px auto auto;
+	padding: 1px;
+}
+.barImg img{
+	width: 100%;
+	height: auto;
+	border-radius: 5px;
+	border:1px solid rgba(255,255,255, 0.3);
+}
+#logoutInfo{
+	float:right;
+}
+.clearfix:after { 
+   content: " ";
+   display: block; 
+   height: 0; 
+   clear: both;
+}
+#registerForm{
+	float:left;
+	display: none;
+}
+#registerForm ul{
+	list-style-type: none;
+}
+#registerForm li{
+	display: inline-block;
+}
+#toggleRegisterForm, #toggleAddConnectionForm{
+	padding:1px;
+	color: white;
+	font-weight: bold;
+	cursor: pointer;
+	border:1px solid white;
+	border-radius: 5px;
+	float:left;
+}
+#registerForm li input{
+	float:left;
+	clear: both;
+	width: 150px;
+}
+#registerForm li span{
+	float:left;
+	clear:both;
+}
+#addConnectionForm{
+	margin: 10px auto auto 23%;
+	display: none;
+	width: 370px;
+	float:left;
+}
+#searchEmail{
+	padding:3px 30px 3px 3px;
+	width: 250px;
+}

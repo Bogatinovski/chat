@@ -1,0 +1,37 @@
+.form ul{
+	list-style-type: none;
+}
+.lbl{
+	width:150px;
+	display: inline-block;
+	text-align: right;
+}
+#registerForm{
+	width: 600px;
+	margin: 5px auto auto auto;
+	border: 1px solid black;
+}
+.error{
+	color:red;
+}
+.input{
+	width:200px;
+}
+#register, #login{
+	display: block;
+	width: 100px;
+	margin: auto auto 1% auto;
+}
+h4{
+	text-align: center;
+}
+#loginForm{
+	width: 250px;
+	margin: 5px auto auto auto;
+	border: 1px solid black;
+}
+#registerCompanyForm{
+	width: 250px;
+	margin: 5px auto auto auto;
+	border: 1px solid black;
+}

@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Socket.IO chat</title>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font: 13px Helvetica, Arial; }
+      form { background: #000; padding: 3px; position: fixed; bottom: 0; width: 100%; }
+      form input { border: 0; padding: 10px; width: 90%; margin-right: .5%; }
+      form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; }
+      #messages { list-style-type: none; margin: 0; padding: 0; }
+      #messages li { padding: 5px 10px; }
+      #messages li:nth-child(odd) { background: #eee; }
+    </style>
+
+
+  </head>
+  <body>
+    <ul id="messages"></ul>
+    <div id="status"></div>
+    <form id="chatForm" action="">
+      <input id="m" autocomplete="off" /><button>Send</button>
+    </form>
+
+
+    <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+   <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+  <script>
+      var to_user = 1;
+    var socket = io("http://localhost/chat");
+
+  $("#chatForm").submit(function(e){
+    e.preventDefault();
+    socket.emit("user_not_typing");
+    var text = $("#m").val();
+
+    var message = {text:text, to_user:to_user}
+    socket.emit('chat message', message);
+    // $('#messages').append($('<li>').text(text));
+    $('#m').val('');
+    return false;
+  });
+
+  $("#m").keyup(function(e){
+      if($(this).val().length)
+        socket.emit("user_typing");
+      else socket.emit("user_not_typing");
+  });
+
+   socket.on('chat message', function(msg){
+    $("#messages").append($('<li></li>').text(msg));
+  });
+
+   socket.emit("user_connected");
+   socket.on('user_connected', function(message){
+      $('#messages').append($('<li></li>').text(message));
+   });
+
+   socket.on("user_disconnected", function(message){
+      $('#messages').append($('<li></li>').text(message));
+   });
+
+   socket.on("user_typing", function(data){
+       $("#status").text(data);
+   });
+
+   socket.on('user_not_typing', function(){
+        $("#status").text('');
+   });
+
+  </script>
+  </body>
+</html>
