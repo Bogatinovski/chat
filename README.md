@@ -1,0 +1,5 @@
+# chat
+VIDEO-AUDIO CONFERENCE WEB APP
+
+Web app that allows users to chat and have audio/video call. The users can create an account, log in and communicate with other users in a real-time manner. For the web app’s backend I used PHP and I used MySQL database to store the info about the users and their messages
+For the real-time communication I had a node.js server which useds socket.io to push the messages between the users. The audio/video system  works natively  in the browser without the use of any plugins. For this I use WebRTC. The best part is that the audio/video communication goes directly browser-to-browser via TCP protocol so there is no server overload. Node.js server is only used for signaling to establish the tcp connection between the two web browsers. To synchronize the sessions between php and node.js I use redis. Php saves its session in a redis server and then node.js reads that session from the redis server based on the session cookie (PHPSESSIONID) that is obtained from the sockets handshake. Php is in charge of creating and destroying the session and node.js only reads the session from redis.
